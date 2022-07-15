@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Rooms";
+}
+@model IEnumerable<RoomModel>
+<h1>@ViewData["Title"]</h1>
+
+@foreach (var r in Model)
+{
+        @Html.ActionLink(r.Name, "Room", "Home",new {id=r.Id});
+}

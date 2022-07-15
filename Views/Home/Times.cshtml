@@ -1,0 +1,17 @@
+﻿@model Dictionary<DateTime, List<DateTime>>
+
+<p>casy</p>
+
+@foreach (KeyValuePair<DateTime, List<DateTime>> pair in Model)
+{
+    <label> @pair.Key.ToString()</label>
+    <div>
+        @foreach (DateTime data in @pair.Value)
+        {
+            <a href="@Url.Action("CreateReservation", "Home", new { date = data })">
+                <span>@data.ToString("HH:mm") </span>
+            </a>
+        }
+        </div>
+
+}
