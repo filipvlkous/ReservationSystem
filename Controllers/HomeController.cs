@@ -9,7 +9,6 @@ public class HomeController : Controller
 {
     private readonly IRoom _room;
     private readonly IReservation _reservation;
-    private static int _id;
 
     public HomeController(IRoom room, IReservation reservation)
     {
@@ -42,8 +41,8 @@ public class HomeController : Controller
     
     public async Task<IActionResult> DateSelect(DateTime dateTime,int id)
     {
-        _id = id;
-        //TempData["Id"] = id;
+        //js
+        TempData["Id"] = id;
         if(dateTime.Date >=  DateTime.Now.Date)
         {
             return PartialView("Times", await _room.GetTimes(id,dateTime));
@@ -53,19 +52,17 @@ public class HomeController : Controller
 
     [HttpGet]
     [Route("Home/Room/Create_reservation")]
-    public async Task<IActionResult> CreateReservation(DateTime date)
+    public IActionResult CreateReservation(DateTime date)
     {
-        ReservationModel reservation = await _reservation.PrepareModel(date, _id);
-        //TempData["Rezerve"] = reservation;
+        TempData["Date"] = date;
         return View(new ReservationModel());
     }
 
     [HttpPost]
     [Route("Home/Room/Create_reservation")]
-    public IActionResult CreateReservation([Bind("Name")] ReservationModel reservationModel)
+    public async Task<IActionResult> CreateReservation([Bind("Name")] ReservationModel reservationModel)
     {
-        var v = TempData["Rezerve"];
-        
+        await _reservation.CreateReservation(reservationModel,(DateTime)TempData["Date"], (int)TempData["Id"]);
         return RedirectToAction("Index");
     }
 

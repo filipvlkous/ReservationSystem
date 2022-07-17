@@ -23,14 +23,22 @@ namespace MVC2nd.Services
         }
 
 
-        public async Task<ReservationModel> PrepareModel(DateTime date,int _id)
+        public async Task CreateReservation(ReservationModel reservationModel, DateTime date, int _id)
         {
-            ReservationModel reservationModel = new ReservationModel();
             reservationModel.Cas = date;
             reservationModel.Room = await _roomModel.GetRoom(_id);
-            reservationModel.Id = _id;
-            return reservationModel;
+
+            try
+            {
+                await _db.Reservations.AddAsync(reservationModel);
+                await _db.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
+
 

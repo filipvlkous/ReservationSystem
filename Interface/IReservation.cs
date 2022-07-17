@@ -6,7 +6,7 @@ namespace MVC2nd.Interface
     public interface IReservation
     {
         Task<IEnumerable<ReservationModel>> GetAllResAsync();
-        Task<ReservationModel> PrepareModel(DateTime dateTime,int _id);
+        Task CreateReservation(ReservationModel reservationModel,DateTime dateTime,int _id);
     }
 }
 
