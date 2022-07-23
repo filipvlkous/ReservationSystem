@@ -8,57 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MVC2nd
 build_property.RootNamespace = MVC2nd
-build_property.ProjectDir = /Users/filipvlk/Projects/Ukol/MVC2nd/
+build_property.ProjectDir = /Users/filipvlk/Documents/GitHub/ReservationSystem/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = /Users/filipvlk/Projects/Ukol/MVC2nd
+build_property.MSBuildProjectDirectory = /Users/filipvlk/Documents/GitHub/ReservationSystem
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/filipvlk/Projects/Ukol/MVC2nd/Views/Home/CreateReservation.cshtml]
+[/Users/filipvlk/Documents/GitHub/ReservationSystem/Views/Home/CreateReservation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9DcmVhdGVSZXNlcnZhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/filipvlk/Projects/Ukol/MVC2nd/Views/Home/Index.cshtml]
+[/Users/filipvlk/Documents/GitHub/ReservationSystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/filipvlk/Projects/Ukol/MVC2nd/Views/Home/Room.cshtml]
+[/Users/filipvlk/Documents/GitHub/ReservationSystem/Views/Home/Room.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Sb29tLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/filipvlk/Projects/Ukol/MVC2nd/Views/Home/Rooms.cshtml]
+[/Users/filipvlk/Documents/GitHub/ReservationSystem/Views/Home/Rooms.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Sb29tcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/filipvlk/Projects/Ukol/MVC2nd/Views/Home/Times.cshtml]
+[/Users/filipvlk/Documents/GitHub/ReservationSystem/Views/Home/Times.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9UaW1lcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/filipvlk/Projects/Ukol/MVC2nd/Views/Home/WrongTime.cshtml]
+[/Users/filipvlk/Documents/GitHub/ReservationSystem/Views/Home/WrongTime.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Xcm9uZ1RpbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/filipvlk/Projects/Ukol/MVC2nd/Views/Shared/Error.cshtml]
+[/Users/filipvlk/Documents/GitHub/ReservationSystem/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/filipvlk/Projects/Ukol/MVC2nd/Views/Shared/_calndear.cshtml]
+[/Users/filipvlk/Documents/GitHub/ReservationSystem/Views/Shared/_calndear.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19jYWxuZGVhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/filipvlk/Projects/Ukol/MVC2nd/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/filipvlk/Documents/GitHub/ReservationSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/filipvlk/Projects/Ukol/MVC2nd/Views/_ViewImports.cshtml]
+[/Users/filipvlk/Documents/GitHub/ReservationSystem/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/filipvlk/Projects/Ukol/MVC2nd/Views/_ViewStart.cshtml]
+[/Users/filipvlk/Documents/GitHub/ReservationSystem/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/filipvlk/Projects/Ukol/MVC2nd/Views/Shared/_Layout.cshtml]
+[/Users/filipvlk/Documents/GitHub/ReservationSystem/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6bcdg3hhfu

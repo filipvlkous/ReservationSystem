@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IRoom, RoomServices>();
 builder.Services.AddScoped<IReservation, ReservationService>();
+
 builder.Services.AddDbContext<RoomsDbContext>
     (options => options.UseSqlServer
     (builder.Configuration.GetConnectionString("DefaultConnection")));

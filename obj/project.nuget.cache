@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "r9dIy5wVDfXMhOjYOWAPwkcuu6D+sLGzU+6Cowo38cUyqCV+lVvyYewTlDolc+E2yKZK8RRFvfuggtAdjZRYzg==",
+  "dgSpecHash": "xlVDO208hj1wzIjSGigu0e08jhZ8HZvNtRiYCIpJYjutgb8fJLCp6yWwYl9UObwue/aPDggvglw8LB//Y2qZuw==",
   "success": true,
   "projectFilePath": "/Users/filipvlk/Documents/GitHub/ReservationSystem/MVC2nd.csproj",
   "expectedPackageFiles": [
@@ -108,10 +108,10 @@
     "/Users/filipvlk/.nuget/packages/sqlitepclraw.core/2.0.6/sqlitepclraw.core.2.0.6.nupkg.sha512",
     "/Users/filipvlk/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.0.6/sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",
     "/Users/filipvlk/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.0.6/sqlitepclraw.provider.e_sqlite3.2.0.6.nupkg.sha512",
-    "/Users/filipvlk/.nuget/packages/swashbuckle.aspnetcore/6.3.2/swashbuckle.aspnetcore.6.3.2.nupkg.sha512",
-    "/Users/filipvlk/.nuget/packages/swashbuckle.aspnetcore.swagger/6.3.2/swashbuckle.aspnetcore.swagger.6.3.2.nupkg.sha512",
-    "/Users/filipvlk/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.3.2/swashbuckle.aspnetcore.swaggergen.6.3.2.nupkg.sha512",
-    "/Users/filipvlk/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.3.2/swashbuckle.aspnetcore.swaggerui.6.3.2.nupkg.sha512",
+    "/Users/filipvlk/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "/Users/filipvlk/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "/Users/filipvlk/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "/Users/filipvlk/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
     "/Users/filipvlk/.nuget/packages/system.appcontext/4.3.0/system.appcontext.4.3.0.nupkg.sha512",
     "/Users/filipvlk/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
     "/Users/filipvlk/.nuget/packages/system.collections/4.3.0/system.collections.4.3.0.nupkg.sha512",

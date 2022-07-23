@@ -9,18 +9,20 @@ namespace MVC2nd.Services
     {
         private RoomsDbContext _db;
         private IRoom _roomModel;
-            
-        public ReservationService(RoomsDbContext db,IRoom room)
+
+        public ReservationService(RoomsDbContext db, IRoom room)
         {
             _db = db;
             _roomModel = room;
         }
+
         public async Task<IEnumerable<ReservationModel>> GetAllResAsync()
         {
 
-            var reservation = await _db.Reservations.ToListAsync();
+            List<ReservationModel> reservation = await _db.Reservations.ToListAsync();
             return reservation;
         }
+
 
 
         public async Task CreateReservation(ReservationModel reservationModel, DateTime date, int _id)
@@ -28,16 +30,26 @@ namespace MVC2nd.Services
             reservationModel.Cas = date;
             reservationModel.Room = await _roomModel.GetRoom(_id);
 
-            try
+            bool exist = _db.Reservations.Any(x => x.Cas == date && x.Room.Name == reservationModel.Name);
+
+
+            if (exist)
             {
-                await _db.Reservations.AddAsync(reservationModel);
-                await _db.SaveChangesAsync();
+                try
+                {
+                    await _db.Reservations.AddAsync(reservationModel);
+                    await _db.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+
+
         }
+
+
     }
 }
 

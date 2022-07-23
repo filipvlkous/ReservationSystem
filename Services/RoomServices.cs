@@ -8,7 +8,7 @@ namespace MVC2nd.Services
     public class RoomServices : IRoom
     {
         private readonly RoomsDbContext _db;
-        public RoomServices(RoomsDbContext db)
+        public RoomServices(RoomsDbContext db )
         {
             _db = db;
         }
@@ -27,20 +27,26 @@ namespace MVC2nd.Services
             return room;
         }
 
-        public async Task<Dictionary<DateTime, List<DateTime>>> GetTimes(int id,DateTime dateTime)
+        public async Task<Dictionary<DateTime, List<DateTime>>> GetTimes(int id, DateTime dateTime)
         {
             Dictionary<DateTime, List<DateTime>> hours = new Dictionary<DateTime, List<DateTime>>();
             var room = await GetRoom(id);
-            int i = room.Open;
-                while (i < room.Close)
-                {
-                    DateTime from = dateTime.Add(TimeSpan.FromHours(i));
-                    DateTime to = dateTime.Add(TimeSpan.FromHours(++i));
-                    
-                    hours.Add(from, new List<DateTime>{from,to});
+            var reservations = _db.Reservations;
 
-                }       
-                return hours;
+            int i = room.Open;
+            while (i < room.Close)
+            {
+                DateTime from = dateTime.Add(TimeSpan.FromHours(i));
+                DateTime to = dateTime.Add(TimeSpan.FromHours(++i));
+
+                if (reservations.FirstOrDefault(x => x.Cas != dateTime))
+                {
+                    
+                    hours.Add(from, new List<DateTime> { from, to });
+                }
+
+            }
+            return hours;
         }
     }
 }

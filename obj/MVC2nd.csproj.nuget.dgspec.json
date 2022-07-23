@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/filipvlk/Projects/Ukol/MVC2nd/MVC2nd.csproj": {}
+    "/Users/filipvlk/Documents/GitHub/ReservationSystem/MVC2nd.csproj": {}
   },
   "projects": {
-    "/Users/filipvlk/Projects/Ukol/MVC2nd/MVC2nd.csproj": {
+    "/Users/filipvlk/Documents/GitHub/ReservationSystem/MVC2nd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/filipvlk/Projects/Ukol/MVC2nd/MVC2nd.csproj",
+        "projectUniqueName": "/Users/filipvlk/Documents/GitHub/ReservationSystem/MVC2nd.csproj",
         "projectName": "MVC2nd",
-        "projectPath": "/Users/filipvlk/Projects/Ukol/MVC2nd/MVC2nd.csproj",
+        "projectPath": "/Users/filipvlk/Documents/GitHub/ReservationSystem/MVC2nd.csproj",
         "packagesPath": "/Users/filipvlk/.nuget/packages/",
-        "outputPath": "/Users/filipvlk/Projects/Ukol/MVC2nd/obj/",
+        "outputPath": "/Users/filipvlk/Documents/GitHub/ReservationSystem/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/filipvlk/.nuget/NuGet/NuGet.Config"
@@ -66,7 +66,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.3.1, )"
+              "version": "[6.4.0, )"
             }
           },
           "imports": [
