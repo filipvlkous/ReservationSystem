@@ -8,7 +8,7 @@
     <div>
         @foreach (DateTime data in @pair.Value)
         {
-            <a href="@Url.Action("CreateReservation", "Home", new { date = data })">
+            <a href="@Url.Action("CreateReservation", "Home", new { date = pair.Key })">
                 <span>@data.ToString("HH:mm") </span>
             </a>
         }

@@ -10,9 +10,8 @@
 <div id="reservations"></div>
 
 @section scripts{
-    <script>function SetTime({value,id}) {
+    <script>function SetTime({ value, id }) {
 
-    $("#reservations").load("/Home/DateSelect", { dateTime: value, id: id });
-}
-    </script>
+            $("#reservations").load("/Home/DateSelect", { dateTime: value, id: id });
+        }</script>
 }

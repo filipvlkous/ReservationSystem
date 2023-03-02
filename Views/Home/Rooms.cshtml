@@ -2,9 +2,35 @@
     ViewData["Title"] = "Rooms";
 }
 @model IEnumerable<RoomModel>
+    <style>
+   
+        .mysquare {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            display: block;
+            float: left;
+            background-color:lightgray;
+        }
+    </style>
 <h1>@ViewData["Title"]</h1>
 
 @foreach (var r in Model)
 {
-        @Html.ActionLink(r.Name, "Room", "Home",new {id=r.Id});
+        <div class="mysquare">
+            <h3> @r.Name</h3>
+            @{
+
+                if (r.Text.Length > 200)
+                {
+                        <p title="@r.Text">@(r.Text.Substring(0, 197))...</p>
+                    }
+                    else
+                    {
+                    <p>@r.Text</p>
+                    }
+                }
+            @Html.ActionLink("Book now", "Room", "Home", new { id = r.Id })
+
+        </div>
 }

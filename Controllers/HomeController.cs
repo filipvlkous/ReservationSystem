@@ -62,7 +62,9 @@ public class HomeController : Controller
     [Route("Home/Room/Create_reservation")]
     public async Task<IActionResult> CreateReservation([Bind("Name")] ReservationModel reservationModel)
     {
-        await _reservation.CreateReservation(reservationModel,(DateTime)TempData["Date"], (int)TempData["Id"]);
+
+        RoomModel r = await _room.GetRoom((int)TempData["Id"]);
+        await _reservation.CreateReservation(reservationModel, (DateTime)TempData["Date"], r);
         return RedirectToAction("Index");
     }
 
