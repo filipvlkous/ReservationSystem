@@ -25,7 +25,7 @@ namespace MVC2nd.Services
         {
             reservationModel.Cas = date;
             reservationModel.Room = room;
-            bool exist = _db.Reservations.Any(x => x.Cas == date && x.Room.Id == reservationModel.Room.Id);
+            bool exist = await _db.Reservations.AnyAsync(x => x.Cas == date && x.Room.Id == reservationModel.Room.Id);
 
             if (!exist)
             {

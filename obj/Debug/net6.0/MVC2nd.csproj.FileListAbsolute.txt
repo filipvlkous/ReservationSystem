@@ -1152,3 +1152,8 @@
 /Users/filipvlk/Documents/GitHub/ReservationSystem/obj/Debug/net6.0/ref/MVC2nd.dll
 /Users/filipvlk/Documents/GitHub/ReservationSystem/bin/Debug/net6.0/refs/Microsoft.Extensions.Caching.Memory.dll
 /Users/filipvlk/Documents/GitHub/ReservationSystem/obj/Debug/net6.0/refint/MVC2nd.dll
+/Users/filipvlk/Documents/GitHub/ReservationSystem/obj/Debug/net6.0/staticwebassets/msbuild.MVC2nd.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/filipvlk/Documents/GitHub/ReservationSystem/obj/Debug/net6.0/staticwebassets/msbuild.build.MVC2nd.props
+/Users/filipvlk/Documents/GitHub/ReservationSystem/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.MVC2nd.props
+/Users/filipvlk/Documents/GitHub/ReservationSystem/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.MVC2nd.props
+/Users/filipvlk/Documents/GitHub/ReservationSystem/obj/Debug/net6.0/staticwebassets.pack.json

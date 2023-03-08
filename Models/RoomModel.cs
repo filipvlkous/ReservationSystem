@@ -22,5 +22,5 @@ namespace MVC2nd.Models
 
 
     }
-}
 
+}

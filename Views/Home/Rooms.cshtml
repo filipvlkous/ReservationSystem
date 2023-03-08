@@ -5,10 +5,10 @@
     <style>
    
         .mysquare {
-            width: 200px;
-            height: 200px;
+           
             border: 1px solid #000;
-            display: block;
+            display: flex;
+            flex-direction:row;
             float: left;
             background-color:lightgray;
         }
@@ -23,13 +23,13 @@
 
                 if (r.Text.Length > 200)
                 {
-                        <p title="@r.Text">@(r.Text.Substring(0, 197))...</p>
-                    }
-                    else
-                    {
-                    <p>@r.Text</p>
-                    }
+                    <p title="@r.Text">@(r.Text.Substring(0, 197))...</p>
                 }
+                else
+                {
+                    <p>@r.Text</p>
+                }
+             }
             @Html.ActionLink("Book now", "Room", "Home", new { id = r.Id })
 
         </div>
