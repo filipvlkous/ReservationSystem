@@ -18,7 +18,7 @@ namespace MVC2nd.Models
 
         public int Close { get; set; }
 
-        public List<ReservationModel> Rezervations { get; set; }
+        public virtual ICollection<ReservationModel> Rezervations { get; set; }
 
 
     }

@@ -4,7 +4,7 @@
 
 namespace MVC2nd.Migrations
 {
-    public partial class IdentitiProblem : Migration
+    public partial class virtualAdd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

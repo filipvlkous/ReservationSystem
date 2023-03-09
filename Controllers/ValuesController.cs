@@ -36,13 +36,14 @@ namespace MVC2nd.Controllers
                 return BadRequest("Invalid date format. Please use dd.mm.yyyy format.");
             }
 
-            var roomId = await _room.GetRoomAPI(id, parsedDate);
-            
+            var times = await _room.GetTimes(id, parsedDate);
+            RoomModel room = await _room.GetRoom(id);
 
             var response = new
             {
-         
-                Date = parsedDate.ToString("dd.MM.yyyy")
+                open = room.Open,
+                close=room.Close,
+                free = times,
             };
 
             return Ok(response);
@@ -50,7 +51,7 @@ namespace MVC2nd.Controllers
 
 
         [HttpGet("{date}")]
-        public IActionResult GetByDate(string date)
+        public async Task<IActionResult> GetByDate(string date)
         {
             DateTime parsedDate;
             bool isDateValid = DateTime.TryParseExact(date, "dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None, out parsedDate);
@@ -60,11 +61,12 @@ namespace MVC2nd.Controllers
                 return BadRequest("Invalid date format. Please use dd.mm.yyyy format.");
             }
 
+            var rooms = await _room.GetRoomAPI(parsedDate);
+            
             var response = new
             {
-                Date = parsedDate.ToString("dd.MM.yyyy")
+                Rooms = rooms,
             };
-
             return Ok(response);
         }
     }

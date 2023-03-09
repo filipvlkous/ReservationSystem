@@ -21,11 +21,18 @@ namespace MVC2nd.Services
             return reservation;
         }
 
+        public async Task<ReservationModel>? GetReservationExist()
+        {
+
+
+            return null;
+        }
+
         public async Task CreateReservation(ReservationModel reservationModel, DateTime date, RoomModel room)
         {
             reservationModel.Cas = date;
-            reservationModel.Room = room;
-            bool exist = await _db.Reservations.AnyAsync(x => x.Cas == date && x.Room.Id == reservationModel.Room.Id);
+            reservationModel.RoomId = room.Id;
+            bool exist = await _db.Reservations.AnyAsync(x => x.Cas == date && x.RoomId == reservationModel.RoomId);
 
             if (!exist)
             {

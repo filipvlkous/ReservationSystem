@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC2nd.Migrations
 {
     [DbContext(typeof(RoomsDbContext))]
-    [Migration("20220713235254_firstMig")]
-    partial class firstMig
+    [Migration("20230308152314_virtualAdd")]
+    partial class virtualAdd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

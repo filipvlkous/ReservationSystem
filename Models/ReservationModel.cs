@@ -16,7 +16,7 @@ namespace MVC2nd.Models
 
         public int RoomId { get; set; }  // foreign key to RoomModel entity
 
-        public RoomModel Room { get; set; }
+        public virtual RoomModel Room { get; set; }
 
         public ReservationModel()
         {

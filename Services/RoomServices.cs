@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using MVC2nd.Interface;
@@ -19,7 +21,7 @@ namespace MVC2nd.Services
 
         public async Task<IEnumerable<RoomModel>> GetAllAsync()
         {
-            var room = await _db.Rooms.ToListAsync();
+            IEnumerable<RoomModel> room = await _db.Rooms.ToListAsync();
 
             return room;
         }
@@ -28,23 +30,6 @@ namespace MVC2nd.Services
         {
             RoomModel room = await _db.Rooms.FirstOrDefaultAsync(i => i.Id == id);
             return room;
-        }
-
-        private Task<Dictionary<DateTime, List<DateTime>>>? GetReservations()
-        {
-            return null;
-        }
-
-        public void AddDateTimeIfBetweenOpenAndClose(Dictionary<DateTime, List<DateTime>> hours, RoomModel room, DateTime time)
-        {
-            if (time.TimeOfDay >= TimeSpan.FromHours(room.Open) && time.TimeOfDay <= TimeSpan.FromHours(room.Close))
-            {
-                if (!hours.ContainsKey(time.Date))
-                {
-                    hours.Add(time.Date, new List<DateTime>());
-                }
-                hours[time.Date].Add(time);
-            }
         }
 
         public async Task<Dictionary<DateTime, List<DateTime>>> GetTimes(int id, DateTime dateTime)
@@ -58,7 +43,7 @@ namespace MVC2nd.Services
             {
                 DateTime from = dateTime.AddHours(i);
                 DateTime to = dateTime.AddHours(++i);
-                bool exist = await _db.Reservations.AnyAsync(x => x.Cas == from && x.Room.Id == room.Id);
+                bool exist = await _db.Reservations.AnyAsync(x => x.Cas == from && x.RoomId == room.Id);
 
 
                 if (!exist)
@@ -70,12 +55,20 @@ namespace MVC2nd.Services
             return hours;
         }
 
-        public async Task<RoomModel> GetRoomAPI(int id,DateTime date)
+        public async Task<List<RoomsTimesModel>> GetRoomAPI(DateTime date)
         {
-            RoomModel room = await GetRoom(id);
-            List<ReservationModel> reservations = (await _reservation.GetAllResAsync()).ToList();
+            List<RoomsTimesModel> roomsTimes = new List<RoomsTimesModel>();
+            IEnumerable<RoomModel> rooms = await GetAllAsync();
+            foreach(var room in rooms)
+            {
+                RoomsTimesModel newRoom = new RoomsTimesModel(room.Name,room.Open,room.Close);
+                var times = await GetTimes(room.Id, date);
+                newRoom.Times = times;
 
-            return room;
+                roomsTimes.Add(newRoom);
+            }
+
+            return roomsTimes;
         }
     }
 }
