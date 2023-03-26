@@ -4,6 +4,7 @@ using MVC2nd.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC2nd.Migrations
 {
     [DbContext(typeof(RoomsDbContext))]
-    partial class RoomsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230325012237_ResModelUpdate")]
+    partial class ResModelUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,6 +57,7 @@ namespace MVC2nd.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Text")
+                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -96,9 +99,9 @@ namespace MVC2nd.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 4,
+                            Id = 1,
                             Close = 20,
-                            Name = "Kuchyne",
+                            Name = "Product 1",
                             Open = 11,
                             Text = "dsadsd sdasdasd asdasdasd adasdasda sdad"
                         },
@@ -106,7 +109,7 @@ namespace MVC2nd.Migrations
                         {
                             Id = 2,
                             Close = 20,
-                            Name = "Obejvak",
+                            Name = "Product 2",
                             Open = 10,
                             Text = "dsadsd sdasdasd asdasdasd adasdasda sdad"
                         },
@@ -114,7 +117,7 @@ namespace MVC2nd.Migrations
                         {
                             Id = 3,
                             Close = 20,
-                            Name = "Pokoj",
+                            Name = "Product 3",
                             Open = 9,
                             Text = "dsadsd sdasdasd asdasdasd adasdasda sdad"
                         });

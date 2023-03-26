@@ -1,19 +1,36 @@
 ﻿@model RoomModel
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+@if (ViewBag.ShowModal == true)
+{
+    <p style="color:red; font-size:large;">Nez sis vybral, zabral ti nekdo tuto mistonost v zvoleny cas.</p>
+}
+
+<h2>@Model.Name</h2>
+<p>@Model.Text</p>
+<div style="display:flex; flex-direction:row; justify-content:space-between;">
+
+    <div>
+        <input class="form-control col-sm-5" onchange="SetTime({ value:this.value,id: @Model.Id })" type="date" value="@DateTime.Today.ToString("dd-MM-yyyy")" />
+        <a style="background-color:#FFC300; padding-inline: 10px; padding-block: 8px; color: white; border-radius: 10px; cursor:pointer; text-decoration:none;" href="@Url.Action("Rooms", "Home")">Back</a>
+
+    </div>
+    <div>
+        <div id="reservations"></div>
+
+    </div>
+
+</div>
 
 
 
-<p>@Model.Name</p>
-<h1>Room</h1>
-<p>@Model.Open do @Model.Close </p>
 
-<input class="form-control col-sm-5" onchange="SetTime({ value:this.value,id: @Model.Id })" type="date" value="@DateTime.Today.ToString("dd-MM-yyyy")" />
-<a style="background-color:#FFC300; padding-inline: 10px; padding-block: 8px; color: white; border-radius: 10px; cursor:pointer; text-decoration:none;" href="@Url.Action("Rooms", "Home")">Back</a>
-
-<div id="reservations"></div>
 
 @section scripts{
     <script>function SetTime({ value, id }) {
-
             $("#reservations").load("/Home/DateSelect", { dateTime: value, id: id });
         }</script>
 }

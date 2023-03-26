@@ -35,4 +35,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.7" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Home\Modal.cshtml" />
+  </ItemGroup>
 </Project>

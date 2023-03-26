@@ -34,23 +34,26 @@ namespace MVC2nd.Services
 
         public async Task<Dictionary<DateTime, List<DateTime>>> GetTimes(int id, DateTime dateTime)
         {
-            Dictionary<DateTime, List<DateTime>> hours = new Dictionary<DateTime, List<DateTime>>();
             RoomModel room = await GetRoom(id);
-            List<ReservationModel> reservations = (await _reservation.GetAllResAsync()).ToList();
+         
+            Dictionary<DateTime, List<DateTime>> hours = new Dictionary<DateTime, List<DateTime>>();
+            //List<ReservationModel> reservations = (await _reservation.GetAllResAsync()).ToList();
 
             int i = room.Open;
-            while (i < room.Close)
-            {
-                DateTime from = dateTime.AddHours(i);
-                DateTime to = dateTime.AddHours(++i);
-                bool exist = await _db.Reservations.AnyAsync(x => x.Cas == from && x.RoomId == room.Id);
-
-
-                if (!exist)
+         
+                while (i < room.Close)
                 {
-                   hours.Add(from, new List<DateTime> { from, to });
+                    DateTime from = dateTime.AddHours(i);
+                    DateTime to = dateTime.AddHours(++i);
+                    bool exist = await _db.Reservations.AnyAsync(x => x.Cas == from && x.RoomId == room.Id);
+
+
+                    if (!exist)
+                    {
+                        hours.Add(from, new List<DateTime> { from, to });
+                    }
                 }
-            }
+            
 
             return hours;
         }

@@ -1,11 +1,37 @@
 ﻿@model ReservationModel
 
+<h2>Customer details:</h2>
+</br>
+<p>@TempData["RoomName"]  @Model.Cas - @Model.Cas.AddHours(1).ToString("HH:mm:ss")</p>
 
-<form asp- asp-controller="Home" asp-action="CreateReservation" method="post">
-    <input required="required" type="text" class="form-control scan" placeholder="Name"
-           asp-for="Name" />
- 
+<form asp- asp-controller="Home" asp-action="CreateReservation" method="post" style="width: 30%; ">
+    <div class="formDiv">
+        <label>First Name</label>
+        <input maxlength="50" minlength="1" required="required" type="text" class="form-control scan" placeholder="First name"
+               asp-for="Name" />
+    </div>
+    
+
+    <div class="formDiv">
+        <label>Last Name</label>
+        <input required maxlength="50" minlength="1" type="text" class="form-control scan" placeholder="Last name" asp-for="LastName" />
+    </div>
+
+    <div class="formDiv">
+        <label>Email</label>
+        <input required type="email" min="" class="form-control scan" placeholder="Email" asp-for="Email" />
+    </div>
+
+    <div class="formDiv">
+        <label>Telephone</label>
+        <input required type="tel" class="form-control scan" placeholder="Phone" pattern="^[+]\d{12}$" asp-for="Phone" />
+    </div>
+
+    <div class="formDiv">
+        <label>Note</label>
+        <textarea class="form-control scan" maxlength="500" asp-for="Text" placeholder="Note"></textarea>
+    </div>
+   
     <input type="submit" class="model-close button btn btn-primary primary-btn"
-           style="width:auto;" value="Add" />
-
+           style="width:auto; background-color:green; color:white;" value="Book room" />
 </form>

@@ -28,7 +28,7 @@ namespace MVC2nd.Services
             return null;
         }
 
-        public async Task CreateReservation(ReservationModel reservationModel, DateTime date, RoomModel room)
+        public async Task<bool> CreateReservation(ReservationModel reservationModel, DateTime date, RoomModel room)
         {
             reservationModel.Cas = date;
             reservationModel.RoomId = room.Id;
@@ -38,6 +38,12 @@ namespace MVC2nd.Services
             {
                 await _db.Reservations.AddAsync(reservationModel);
                 await _db.SaveChangesAsync();
+
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

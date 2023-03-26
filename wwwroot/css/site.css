@@ -16,3 +16,10 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+.formDiv{
+    display:flex;
+    padding-block:10px;
+    flex-direction:column;
+}

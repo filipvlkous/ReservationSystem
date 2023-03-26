@@ -1,17 +1,17 @@
 ﻿@model Dictionary<DateTime, List<DateTime>>
 
-<p>casy</p>
 
-@foreach (KeyValuePair<DateTime, List<DateTime>> pair in Model)
-{
-    <label> @pair.Key.ToString()</label>
-    <div>
-        @foreach (DateTime data in @pair.Value)
-        {
-            <a href="@Url.Action("CreateReservation", "Home", new { date = pair.Key })">
+<p>Hours:</p>
+<div style="display: grid; grid-template-columns: 150px 150px 150px 150px; gap: 10px;padding:10px; text-align:center">
+    @foreach (KeyValuePair<DateTime, List<DateTime>> pair in Model)
+    {
+
+        <a href="@Url.Action("CreateReservation", "Home", new { date = pair.Key})" style="border:solid 2px; border-color:black; color:black; border-radius:10px; background-color:lightgrey; padding-inline:5px; padding-block:10px;">
+            @foreach (DateTime data in @pair.Value)
+            {
                 <span>@data.ToString("HH:mm") </span>
-            </a>
-        }
-        </div>
+            }
+        </a>
+    }
 
-}
+</div>
