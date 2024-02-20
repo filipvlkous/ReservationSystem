@@ -14,13 +14,12 @@
 <div style="display:flex; flex-direction:row; justify-content:space-between;">
 
     <div>
-        <input class="form-control col-sm-5" onchange="SetTime({ value:this.value,id: @Model.Id })" type="date" value="@DateTime.Today.ToString("dd-MM-yyyy")" />
+        <input class="form-control col-sm-5" onchange="SetTime({ value:this.value, id: @Model.Id })" type="date" value="@DateTime.Today.ToString("dd-MM-yyyy")" />
         <a style="background-color:#FFC300; padding-inline: 10px; padding-block: 8px; color: white; border-radius: 10px; cursor:pointer; text-decoration:none;" href="@Url.Action("Rooms", "Home")">Back</a>
 
     </div>
     <div>
         <div id="reservations"></div>
-
     </div>
 
 </div>

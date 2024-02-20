@@ -13,15 +13,21 @@ namespace MVC2nd.Services
     {
         private readonly RoomsDbContext _db;
         private readonly IReservation _reservation;
+
+        public RoomServices(RoomsDbContext db)
+        {
+            _db = db;
+        }
+
         public RoomServices(RoomsDbContext db, IReservation reservation)
         {
             _reservation = reservation;
             _db = db;
         }
 
-        public async Task<IEnumerable<RoomModel>> GetAllAsync()
+        public async Task<List<RoomModel>> GetAllAsync()
         {
-            IEnumerable<RoomModel> room = await _db.Rooms.ToListAsync();
+            List<RoomModel> room = await _db.Rooms.ToListAsync();
 
             return room;
         }
@@ -35,7 +41,7 @@ namespace MVC2nd.Services
         public async Task<Dictionary<DateTime, List<DateTime>>> GetTimes(int id, DateTime dateTime)
         {
             RoomModel room = await GetRoom(id);
-         
+            DateTime now = DateTime.Now;
             Dictionary<DateTime, List<DateTime>> hours = new Dictionary<DateTime, List<DateTime>>();
             //List<ReservationModel> reservations = (await _reservation.GetAllResAsync()).ToList();
 
@@ -48,13 +54,11 @@ namespace MVC2nd.Services
                     bool exist = await _db.Reservations.AnyAsync(x => x.Cas == from && x.RoomId == room.Id);
 
 
-                    if (!exist)
+                    if (!exist && now < from)
                     {
                         hours.Add(from, new List<DateTime> { from, to });
                     }
                 }
-            
-
             return hours;
         }
 

@@ -10,6 +10,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IRoom, RoomServices>();
 builder.Services.AddScoped<IReservation, ReservationService>();
 
+builder.Configuration.AddEnvironmentVariables();
+
 builder.Services.AddDbContext<RoomsDbContext>
     (options => options.UseSqlServer
     (builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -35,7 +37,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Rooms}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
 

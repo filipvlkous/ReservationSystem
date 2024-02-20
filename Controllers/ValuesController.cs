@@ -61,9 +61,9 @@ namespace MVC2nd.Controllers
                 return BadRequest("Invalid date format. Please use dd.mm.yyyy format.");
             }
 
-            var rooms = await _room.GetRoomAPI(parsedDate);
-            
-            var response = new
+            List<RoomsTimesModel> rooms = await _room.GetRoomAPI(parsedDate);
+
+            object response = new
             {
                 Rooms = rooms,
             };
